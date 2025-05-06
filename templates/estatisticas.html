@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Estatísticas - Plataforma UNIP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f8fb;
+        }
+        h2 {
+            color: #003e87;
+        }
+        .estatisticas {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .voltar {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #003e87;
+            padding: 10px 16px;
+            border-radius: 6px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .voltar:hover {
+            background-color: #0051c3;
+        }
+    </style>
+</head>
+<body>
+    <div class="estatisticas">
+        <h2>📊 Estatísticas da Comunidade</h2>
+        <ul>
+            <li><strong>Total de usuários:</strong> {{ total }}</li>
+            <li><strong>Idade média:</strong> {{ media }} anos</li>
+            <li><strong>Mediana:</strong> {{ mediana }} anos</li>
+            <li><strong>Moda:</strong> {{ moda }}</li>
+            <li><strong>Desvio padrão:</strong> {{ desvio }}</li>
+            <li><strong>Idade mínima:</strong> {{ idade_min }} anos</li>
+            <li><strong>Idade máxima:</strong> {{ idade_max }} anos</li>
+        </ul>
+        <p>Esses dados representam os perfis dos usuários cadastrados na plataforma e ajudam a entender o público-alvo.</p>
+        <a href="{{ url_for('conteudo') }}" class="voltar">← Voltar para o conteúdo</a>
+    </div>
+</body>
+</html>

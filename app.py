@@ -105,23 +105,26 @@ def conteudo():
 
 @app.route('/estatisticas')
 def estatisticas():
-    if 'usuario' not in session:
-        return redirect(url_for('login'))
-
     usuarios = carregar_dados()
     idades = [u['idade'] for u in usuarios]
 
     if not idades:
-        return "Sem dados."
+        return "Sem dados suficientes."
 
-    media = statistics.mean(idades)
+    media = round(statistics.mean(idades), 2)
     mediana = statistics.median(idades)
     try:
         moda = statistics.mode(idades)
     except:
         moda = "Sem moda"
+    desvio = round(statistics.stdev(idades), 2) if len(idades) > 1 else 0
+    idade_min = min(idades)
+    idade_max = max(idades)
+    total = len(idades)
 
-    return render_template('estatisticas.html', media=media, mediana=mediana, moda=moda)
+    return render_template("estatisticas.html", media=media, mediana=mediana, moda=moda,
+                           desvio=desvio, idade_min=idade_min, idade_max=idade_max, total=total)
+
 
 @app.route('/logout')
 def logout():
