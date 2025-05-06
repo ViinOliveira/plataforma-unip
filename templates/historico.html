@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Histórico - Plataforma UNIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='historico.css') }}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="historico-container">
+        <h2>📄 Histórico de Acessos - {{ nome }}</h2>
+
+        {% if acessos %}
+            <p>Total de acessos: <strong>{{ acessos|length }}</strong></p>
+            <p>Último acesso: <strong>{{ acessos[-1] }}</strong></p>
+
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Data e Hora</th>
+                </tr>
+                {% for data in acessos %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ data }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Você ainda não acessou conteúdos.</p>
+        {% endif %}
+
+        <p class="link-auxiliar">
+            <a href="{{ url_for('conteudo') }}">← Voltar ao conteúdo</a>
+        </p>
+    </div>
+
+    <footer class="rodape">
+        Projeto educacional para UNIP - Desenvolvido por Vinicius Cavalcante - 2025<br>
+        Fontes dos vídeos: Canaltech, NIC.br, Futura, Simplifica LGPD, Olhar Digital
+    </footer>
+
+</body>
+</html>

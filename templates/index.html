@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma UNIP - Início</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo-unip.svg') }}" alt="Logo UNIP" class="logo">
+        <h1>Plataforma Educacional Interativa</h1>
+        <p>Desenvolvida para promover o conhecimento em <strong>Cibersegurança</strong>, <strong>LGPD</strong> e boas práticas no uso da tecnologia.</p>
+
+        {% if not session.get('usuario') %}
+        <p style="margin-top: 20px; font-weight: bold; color: #2c3e50;">
+            Faça login para acessar os conteúdos exclusivos da plataforma.
+        </p>
+        {% endif %}
+
+        <div class="cards">
+            <div class="card">
+                <h3>Segurança</h3>
+                <p>Dicas para proteger seus dados online.</p>
+                <a href="{{ url_for('conteudo') if session.get('usuario') else url_for('login') }}">
+                    {{ 'Ver Conteúdo' if session.get('usuario') else 'Entrar' }}
+                </a>
+            </div>
+            <div class="card">
+                <h3>Privacidade</h3>
+                <p>Conheça seus direitos com a LGPD.</p>
+                <a href="{{ url_for('conteudo') if session.get('usuario') else url_for('login') }}">
+                    {{ 'Ver Conteúdo' if session.get('usuario') else 'Entrar' }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        Projeto educacional para UNIP - Desenvolvido por Vinicius Cavalcante - 2025<br>
+        Fontes dos vídeos: Canaltech, NIC.br, Futura, Simplifica LGPD, Olhar Digital
+    </footer>
+    
+</body>
+</html>

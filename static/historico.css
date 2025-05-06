@@ -1,0 +1,308 @@
+/* ======== BASE ======== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== NAVBAR ======== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003e87;
+    color: white;
+    padding: 14px 32px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-topo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.titulo-topo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.boas-vindas {
+    font-size: 15px;
+}
+
+.btn-sair {
+    background-color: white;
+    color: #003e87;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-sair:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+.container,
+.conteudo-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.container h1,
+.conteudo-container h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.container p,
+.conteudo-container p {
+    color: #444;
+    font-size: 16px;
+}
+
+/* ======== LOGO ======== */
+.logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* ======== FORMULÁRIOS ======== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+/* ======== LINKS GERAIS ======== */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======== CARDS ======== */
+.cards,
+.conteudo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.card,
+.conteudo-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover,
+.conteudo-card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3,
+.conteudo-card h3 {
+    color: #2c3e50;
+}
+
+.card p,
+.conteudo-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.card a,
+.conteudo-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.card a:hover,
+.conteudo-card a:hover {
+    background-color: #27ae60;
+}
+
+/* ======== LINKS DE VÍDEOS NOS CARDS ======== */
+.conteudo-card ul {
+    padding: 0;
+    list-style: none;
+}
+
+.conteudo-card ul li a {
+    display: block;
+    background-color: #003e87;
+    color: white;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.conteudo-card ul li a:hover {
+    background-color: #001f4d;
+}
+
+/* ======== INTRO TEXTO CENTRAL ======== */
+.intro {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+/* ======== RODAPÉ ======== */
+.rodape {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+/* ======== TABELAS (Histórico) ======== */
+.historico-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #003e87;
+}
+
+/* ======== LINKS AUXILIARES ======== */
+.link-auxiliar {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.link-auxiliar a {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.link-auxiliar a:hover {
+    text-decoration: underline;
+}
+
+/* ======== MENU HAMBURGER ======== */
+.hamburger {
+    display: none;
+    background: none;
+    color: white;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .topbar-right.ativo {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 20px;
+    }
+}
+

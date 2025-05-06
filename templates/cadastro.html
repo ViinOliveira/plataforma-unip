@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Plataforma UNIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="form-wrapper">
+        <div class="form-box">
+            <h2>👤 Cadastro de Novo Usuário</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <input type="text" name="nome" placeholder="Nome completo" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="idade" placeholder="Idade" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="senha" placeholder="Senha" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p class="link-auxiliar"><a href="{{ url_for('index') }}">← Voltar ao início</a></p>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        Projeto educacional para UNIP - Desenvolvido por Vinicius Cavalcante - 2025<br>
+        Fontes dos vídeos: Canaltech, NIC.br, Futura, Simplifica LGPD, Olhar Digital
+    </footer>
+
+</body>
+</html>

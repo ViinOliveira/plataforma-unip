@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo - Plataforma UNIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='conteudo.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="conteudo-container">
+        <h2>Bem-vindo(a), {{ nome }}!</h2>
+        <p>Aqui estão os conteúdos disponíveis para você:</p>
+
+        <a href="{{ url_for('meu_historico') }}" class="btn-historico">📄 Ver meu histórico</a>
+
+        <div class="conteudo-cards">
+
+            <!-- LGPD -->
+            <div class="conteudo-card">
+                <h3>LGPD</h3>
+                <p>Entenda a Lei Geral de Proteção de Dados e como ela afeta você e as empresas.</p>
+                <a href="https://www.youtube.com/watch?v=KpJGm2k1b_o" target="_blank" class="video-link">📺 O que é LGPD?</a>
+                <a href="https://www.youtube.com/watch?v=R_6D3V2dqGE" target="_blank" class="video-link">🕒 LGPD em 5 minutos</a>
+            </div>
+
+            <!-- Cibersegurança -->
+            <div class="conteudo-card">
+                <h3>Cibersegurança</h3>
+                <p>Dicas práticas para proteger seus dados e dispositivos no dia a dia.</p>
+                <a href="https://www.youtube.com/watch?v=9OvQmFqvMyw" target="_blank" class="video-link">🛡️ Como se proteger</a>
+                <a href="https://www.youtube.com/watch?v=MeBlrxF4R3Q" target="_blank" class="video-link">🎯 Engenharia Social</a>
+            </div>
+
+            <!-- Boas Práticas -->
+            <div class="conteudo-card">
+                <h3>Boas Práticas</h3>
+                <p>Use a tecnologia de forma ética, segura e sustentável.</p>
+                <a href="https://www.youtube.com/watch?v=zDpTbLg_4eA" target="_blank" class="video-link">✅ 10 dicas práticas</a>
+                <a href="https://www.youtube.com/watch?v=0JOLtTscW5g" target="_blank" class="video-link">🌱 Dados pessoais e ética</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        Projeto educacional para UNIP - Desenvolvido por Vinicius Cavalcante - 2025<br>
+        Fontes dos vídeos: Canaltech, NIC.br, Futura, Simplifica LGPD, Olhar Digital
+    </footer>
+
+</body>
+</html>

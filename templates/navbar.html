@@ -1,0 +1,24 @@
+<nav class="topbar">
+    <div class="topbar-left">
+        <img src="{{ url_for('static', filename='logo-unip.svg') }}" alt="Logo UNIP" class="logo-topo">
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <div class="topbar-right" id="menuLinks">
+        {% if session.get('usuario') %}
+            <span class="boas-vindas">Olá, {{ session['usuario'] }}!</span>
+            <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+        {% else %}
+            <a href="{{ url_for('cadastro') }}" class="btn-sair">Cadastro</a>
+            <a href="{{ url_for('login') }}" class="btn-sair">Login</a>
+        {% endif %}
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menuLinks");
+        menu.classList.toggle("ativo");
+    }
+</script>
